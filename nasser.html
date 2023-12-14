@@ -37,10 +37,6 @@
             text-align: center;
         }
 
-        h2 {
-            font-size: 36px; /* Big font size */
-        }
-
         footer {
             background-color: #cc0000; /* Red footer background */
             color: #fff;
@@ -60,7 +56,25 @@
         </nav>
     </header>
     <section>
-        <h2>Nasser's Total Better Bux: Infinite LOL</h2> <!-- Update with Aydin's actual total amount -->
+        <script>
+            // Check if the user is logged in
+            function checkLogin() {
+                var isLoggedIn = sessionStorage.getItem('isLoggedIn');
+
+                // If not logged in, redirect to the login page
+                if (!isLoggedIn || isLoggedIn !== 'true') {
+                    alert('Access denied. Please log in.');
+                    window.location.href = 'login.html';
+                }
+            }
+
+            // Run the check when the page loads
+            checkLogin();
+        </script>
+
+        <!-- Your content for the authenticated user goes here -->
+        <h2>Welcome, Nasser!</h2>
+        <p>Your total amount of Better Bux: Infinite LOL EZ</p>
     </section>
 
     <footer>
