@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better Bux - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffcc00; /* Yellow background */
+        }
+
+        header {
+            background-color: #cc0000; /* Red header background */
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #000; /* Black navigation links */
+            text-decoration: none;
+            padding: 5px 10px;
+            margin: 0 5px;
+            border-radius: 5px;
+            background-color: #ffcc00; /* Yellow navigation background */
+        }
+
+        section {
+            padding: 2em;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #cc0000; /* Red footer background */
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #000; /* Black label text */
+        }
+
+        input {
+            padding: 8px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #000; /* Black button background */
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="finallogobetterbux.png" alt="Better Bux Logo" width="100" height="100">
+        <h1>Better Bux - Login</h1>
+        <nav>
+            <a href="home.html">Home</a> | <a href="information.html">Information</a> | <a href="one.html">Positive Page</a> | <a href="buyone.html">Buy Now</a> | <a href="JoinUs.html">Join Us</a> | <a href="ToS.html">Terms of Service</a>
+        </nav>
+    </header>
+    <section>
+        <form onsubmit="return login()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="passcode">Passcode:</label>
+            <input type="password" id="passcode" name="passcode" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2023 Better Bux. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var passcode = document.getElementById('passcode').value;
+
+            if (username === 'Aydin' && passcode === '1234') {
+                alert('Login successful! Redirecting to the target page.');
+                window.location.href = 'targetPage.html'; // Replace with the actual target page
+                return false; // Prevent form submission
+            } else {
+                alert('Invalid username or passcode. Please try again.');
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>
