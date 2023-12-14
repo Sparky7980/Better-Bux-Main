@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="betterbux 16x16 icon.png" type="image/png">
+     <link rel="icon" href="betterbux 16x16 icon.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Better Bux - Login</title>
@@ -103,7 +103,19 @@
             var username = document.getElementById('username').value;
             var passcode = document.getElementById('passcode').value;
 
-            if (username === 'Aydin' && passcode === '1234') {
+            // Define an array of valid credentials
+            var validCredentials = [
+                { username: 'Aydin', passcode: '1234' },
+                { username: 'John', passcode: '5678' },
+                // Add more usernames and passwords as needed
+            ];
+
+            // Check if the entered credentials match any valid credentials
+            var isValid = validCredentials.some(function(credential) {
+                return credential.username === username && credential.passcode === passcode;
+            });
+
+            if (isValid) {
                 alert('Login successful! Redirecting to ' + username + "'s page.");
                 window.location.href = username.toLowerCase() + '.html'; // Redirect to a page based on the username
                 return false; // Prevent form submission
@@ -115,4 +127,6 @@
     </script>
 </body>
 </html>
+
+ 
 
