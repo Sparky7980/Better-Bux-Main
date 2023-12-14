@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link rel="icon" href="betterbux 16x16 icon.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Better Bux - Login</title>
@@ -94,7 +93,9 @@
         </form>
     </section>
 
-
+    <footer>
+        <p>© 2023 Better Bux. All rights reserved.</p>
+    </footer>
 
     <script>
         function login() {
@@ -105,8 +106,7 @@
             var validCredentials = [
                 { username: 'Aydin', passcode: 'BETTERBUX123' },
                 { username: 'Matthew', passcode: 'BETTERBUX123' },
-                 {username: 'Nasser', passcode: 'BETTERBUX123'},
-                 
+                 { username: 'Nasser', passcode: 'BETTERBUX123' },
                 // Add more usernames and passwords as needed
             ];
 
@@ -116,8 +116,12 @@
             });
 
             if (isValid) {
-                alert('Login successful! Redirecting to ' + username + "'s page.");
-                window.location.href = username.toLowerCase() + '.html'; // Redirect to a page based on the username
+                alert('Login successful!');
+                sessionStorage.setItem('isLoggedIn', 'true'); // Set session variable
+
+                // Redirect to the respective user's page
+                window.location.href = username.toLowerCase() + '.html';
+                
                 return false; // Prevent form submission
             } else {
                 alert('Invalid username or passcode. Please try again.');
@@ -127,6 +131,3 @@
     </script>
 </body>
 </html>
-
- 
-
